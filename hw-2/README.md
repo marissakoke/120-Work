@@ -33,4 +33,4 @@ I understand everything that we have gone over so far. The only thing that I wou
 
 I didn't respond to any of my classmates due to there being a lack of questions being posted to the `class repo issue tracker.` I will definietly respond to any of my classmates who need help or have questions.
 
-![Image of my editor]
+![Image of my editor](screenshoteditor.jpg)
