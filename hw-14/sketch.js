@@ -34,7 +34,7 @@ class Person {
 
     this.orientation = orientation;
     this.image = img;
-    this.speed = 5;
+    this.speed = 3;
     this.size = {
       w: 329,
       h: 352
