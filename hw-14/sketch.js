@@ -1,17 +1,17 @@
 
 let person = [];
 let person_img;
-let bg = 'rgb(0,30,212)'
+let bg = 'rgb(83,90,212)'
 
 
 function preload() {
-  person_img = loadImage("./images/dance.png");
+  person_img = loadImage("./images/dance1.png");
 }
 
 function setup() {
   createCanvas( windowWidth, windowHeight);
   background(bg);
-  person[1] = new Person(300, 100, person_img, 1);
+  person.push( new Person(300, 100, person_img, 1) );
 
 }
 
@@ -34,58 +34,57 @@ class Person {
 
     this.orientation = orientation;
     this.image = img;
-    this.speed = 3;
+    this.speed = 10;
     this.size = {
-      w: 329,
-      h: 352
+      w: 440,
+      h: 540
     };
 
     this.sprite_num = 0;
 
     this.subRect = [
-      [0,0],
-      [347,370],
-      [357,0],
-      [696,0],
-      [347,371],
-      [1053,0]
+      [150,0],
+      [740,0],
+      [150,540],
+      [740,540]
     ];
   }
 
-frame(){
-  this.display();
-  this.animate();
-}
-
-display(){
-  push();
-
-  translate(this.pos.x, this.pos.y);
-
-  if (this.orientation === 0) {
-    scale(1,1);
-  } else if (this.orientation === 1) {
-    scale(-1,1);
+  frame(){
+    this.display();
+    this.animate();
   }
 
-  image(
-    this.image,
+  display(){
+    push();
 
-    0,0,
+    translate(this.pos.x, this.pos.y);
 
-    this.size.w, this.size.h,
+    // if (this.orientation === 0) {
+    //   scale(1,1);
+    // } else if (this.orientation === 1) {
+    //   scale(-1,1);
+    // }
 
-    this.subRect[this.sprite_num][0], this.subRect[this.sprite_num][1],
+    image(
+      this.image,
 
-    this.size.w, this.size.h
-  );
-  pop();
-}
+      0,0,
 
-animate(){
-  if (frameCount % this.speed === 0) {
-    this.sprite_num++;
-    this.sprite_num %= 4;
+      this.size.w, this.size.h,
+      // width, height,
+
+      this.subRect[this.sprite_num][0], this.subRect[this.sprite_num][1],
+
+      this.size.w+200, this.size.h
+    );
+    pop();
   }
-}
+
+  animate(){
+    if (frameCount % this.speed === 0) {
+      this.sprite_num++;
+      this.sprite_num %= 4;
+    }
+  }
 }
