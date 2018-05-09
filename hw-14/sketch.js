@@ -1,7 +1,7 @@
 
 let person = [];
 let person_img;
-let bg = 'rgb(83,90,212)'
+let bg = 'rgb(240,89,212)'
 
 
 function preload() {
